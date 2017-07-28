@@ -2,6 +2,26 @@
 
 > A Vue.js project
 
+1. 没做优化之前，npm run build 产生的目录结构如下：
+```
+dist
+    static
+        css
+            app.[hash-code].css
+            app.[hash-code].css.map
+        js
+            app.[hash-code].js
+            manifest.[hash-code].js
+            vendor.[hash-code].js
+        index.html
+```
+其中，build后的css引入在打包后的index.html文件head标签里，js引入在body结束标签之前。  
+webpack.prod.conf.js 文件中，ExtractTextPlugin用于提取vue文件中的css；  
+如果不使用CommonsChunkPlugin提取公共代码，所有的资源，包括第三方库，都会打包到app.js。  
+CommonsChunkPlugin用于提取公共代码，CommonsChunkPlugin做的事情是：在你的多个入口所引用的代码中，找出其中被多个页面引用过的代码段，判定为公共代码打包成一个独立的 js 文件。至此，只需要在每个页面加载这个公共代码段的 js 文件，既可以保持代码的完整性，又不会下载公共代码。
+对于单页应用（单入口）来说，公共包只有他自己使用，不能算公共包。这个插件提取的公共包，每次是会重新打包的（Etag会不同），无论是节约打包时间，还是对浏览器缓存的利用都不是好的方案。最佳方案浮出水面：DllPlugin。
+DllPlugin有什么优势？只对库文件打包一次。也就是说，只要库文件不变，只需要打包一次，以后再打包业务代码和库文件没关系啦，这样一来真正做到了库文件永远是那个库文件，只要库文件不变，缓存永远有效（Etag不变）
+
 ## Build Setup
 
 ``` bash
