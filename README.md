@@ -3,10 +3,10 @@
 > A Vue.js project
 
 时间统计(在前一优化保留的情况下，计算的时间)：  
-未优化前：7060ms,6164ms,5975ms,7486ms,7185ms
-开启webpack的cache 优化后：6175ms,6023ms,5933ms,6075ms
-开启babel-loader的cache 优化后：6091ms,6021ms,6492ms,5980ms
-换用webpack-uglify-parallel并行压缩代码 优化后(有效减少构建时间，推荐使用)：4381ms,3646ms,3639ms,3671ms
+未优化前：7060ms,6164ms,5975ms,7486ms,7185ms  
+开启webpack的cache 优化后：6175ms,6023ms,5933ms,6075ms  
+开启babel-loader的cache 优化后：6091ms,6021ms,6492ms,5980ms  
+换用webpack-uglify-parallel并行压缩代码 优化后(有效减少构建时间，推荐使用)：4381ms,3646ms,3639ms,3671ms  
 
 
 * 从网上搜到的优化方案：
