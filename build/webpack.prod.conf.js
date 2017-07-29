@@ -11,6 +11,9 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 var env = config.build.env
 
+const UglifyJsparallelPlugin = require('webpack-uglify-parallel');
+const os = require('os');
+
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -29,11 +32,20 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      sourceMap: true
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   },
+    //   sourceMap: true
+    // }),
+    new UglifyJsparallelPlugin({
+      workers: os.cpus().length,
+      mangle: true,
+      compressor: {
+         warnings: false,
+         drop_console: true,
+         drop_debugger: true
+         }
     }),
     // extract css into its own file
     new ExtractTextPlugin({
