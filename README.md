@@ -6,6 +6,7 @@
 使用DllPlugin和DllReferencePlugin预编译 遇到问题：  
 1. npm run dev时怎么配置？
 2. dll文件放在哪个目录下，网页访问正常？
+3. 开发时，有什么影响吗？
 
 Vue-cli项目的Webpack2构建优化  
 针对vue-cli(vue init webpack)构建的npm run build命令，优化方法
