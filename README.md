@@ -10,7 +10,8 @@ Vue-cli项目的Webpack2构建优化
 开启webpack的cache 优化后：6175ms,6023ms,5933ms,6075ms  
 开启babel-loader的cache 优化后：6091ms,6021ms,6492ms,5980ms  
 换用webpack-uglify-parallel并行压缩代码 优化后(有效减少构建时间，推荐使用)：4381ms,3646ms,3639ms,3671ms  
-css-loader换成0.14.5版本 优化后：能减少1秒左右构建时间
+css-loader换成0.14.5版本 优化后：能减少1秒左右构建时间  
+使用DllPlugin和DllReferencePlugin预编译 优化后：3452ms,3534ms
 
 * 从网上搜到的优化方案：
 1. 开启webpack的cache

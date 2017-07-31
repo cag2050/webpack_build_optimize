@@ -3,6 +3,8 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+const webpack = require('webpack');
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -19,6 +21,12 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  plugins: [
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('../dist/static/js/vendor-mainfest.json')
+    })
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
