@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-Vue-cli项目的Webpack2构建优化
+Vue-cli项目的Webpack2构建优化  
 针对vue-cli(vue init webpack)构建的npm run build命令，优化方法
 
 时间统计(在前一优化保留的情况下，计算的时间)：  
