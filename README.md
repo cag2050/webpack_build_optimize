@@ -16,7 +16,7 @@
 4. 配置loader的include和exclude
 5. 使用CommonsChunkPlugin提取公用模块
 6. 使用DllPlugin和DllReferencePlugin预编译（把不常变动的第三方库都提取出来，下次 build 的时候不再构建这些库，减少构建时间）
-7. 换用happypack多进程构建
+7. 换用happypack多进程构建（现阶段vue-cli和happypack对接不好，暂没有使用）
 8. css-loader换成0.14.5版本
 9. 换用webpack-uglify-parallel并行压缩代码  
 参考：https://molunerfinn.com/Webpack-Optimize/

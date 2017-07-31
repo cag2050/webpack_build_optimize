@@ -7,10 +7,6 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-const os = require('os');
-const HappyPack  = require('happypack');
-const happThreadPool = HappyPack.ThreadPool({size: os.cpus().length}); // 采用多进程，进程数由CPU核数决定
-
 module.exports = {
   cache: true,
   entry: {
@@ -30,14 +26,6 @@ module.exports = {
       '@': resolve('src')
     }
   },
-  plugins: [
-      new HappyPack({
-          id: 'js',
-          cache: true,
-          loaders: ['babel-loader?cacheDirectory=true'],
-          threadPool: happThreadPool
-      })
-  ],
   module: {
     rules: [
       {
@@ -56,8 +44,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        // loader: 'babel-loader?cacheDirectory=true',
-        loader: ['happypack/loader?id=js'], // 将loader换成happypack
+        loader: 'babel-loader?cacheDirectory=true',
         include: [resolve('src'), resolve('test')]
       },
       {
