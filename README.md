@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+Vue-cli项目的Webpack2构建优化
+针对vue-cli(vue init webpack)构建的npm run build命令，优化方法
+
 时间统计(在前一优化保留的情况下，计算的时间)：  
 未优化前：7060ms,6164ms,5975ms,7486ms,7185ms  
 开启webpack的cache 优化后：6175ms,6023ms,5933ms,6075ms  
