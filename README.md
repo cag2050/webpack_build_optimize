@@ -4,9 +4,7 @@
 
 
 使用DllPlugin和DllReferencePlugin预编译 遇到问题：  
-1. npm run dev时怎么配置？
-2. dll文件放在哪个目录下，网页访问正常？
-3. 开发时，有什么影响吗？
+1. 开发时，有什么影响吗？
 
 Vue-cli项目的Webpack2构建优化  
 针对vue-cli(vue init webpack)构建的npm run build命令，优化方法
@@ -25,7 +23,7 @@ css-loader换成0.14.5版本 优化后：能减少1秒左右构建时间
 3. 配置modules以及配置项目相关的alias
 4. 配置loader的include和exclude
 5. 使用CommonsChunkPlugin提取公用模块
-6. 使用DllPlugin和DllReferencePlugin预编译（把不常变动的第三方库都提取出来，下次 build 的时候不再构建这些库，减少构建时间）
+6. 使用DllPlugin和DllReferencePlugin预编译（把不常变动的第三方库都提取出来，下次 build 的时候不再构建这些库，减少构建时间，http://www.jianshu.com/p/64e551010198）
 7. 换用happypack多进程构建（现阶段vue-cli和happypack对接不好，暂没有使用）
 8. css-loader换成0.14.5版本
 9. 换用webpack-uglify-parallel并行压缩代码  
