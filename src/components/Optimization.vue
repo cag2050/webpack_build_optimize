@@ -13,7 +13,10 @@ export default {
     data () {
         return {
             msg: 'vue-cli下webpack有效优化方法:',
-            optimizations: ['换用webpack-uglify-parallel并行压缩代码', '使用DllPlugin和DllReferencePlugin预编译']
+            optimizations: [
+                '换用webpack-uglify-parallel并行压缩代码',
+                '使用DllPlugin和DllReferencePlugin预编译'
+            ]
         }
     }
 }
