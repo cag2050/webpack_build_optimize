@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require('../dist/static/js/vendor-mainfest.json')
+      manifest: require('../static/libs-mainfest.json')
     })
   ],
   resolve: {

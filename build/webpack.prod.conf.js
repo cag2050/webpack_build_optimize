@@ -9,6 +9,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
+var bundleConfig = require("../static/bundle-config.json") // 调入dll bundle生成的的版本信息json
+
 var env = config.build.env
 
 const UglifyJsparallelPlugin = require('webpack-uglify-parallel');
@@ -73,7 +75,8 @@ var webpackConfig = merge(baseWebpackConfig, {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'dependency',
+      libJsName: bundleConfig.libs.js
     }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
