@@ -1,1 +1,31 @@
-{"name":"libs_library","content":{"../node_modules/process/browser.js":{"id":0,"meta":{}},"../node_modules/vue-router/dist/vue-router.esm.js":{"id":1,"meta":{"harmonyModule":true},"exports":["default"]},"../node_modules/vue/dist/vue.esm.js":{"id":2,"meta":{"harmonyModule":true},"exports":["default"]},"../node_modules/webpack/buildin/global.js":{"id":3,"meta":{}}}}
+{
+    "name": "libs_library",
+    "content": {
+        "../node_modules/process/browser.js": {
+            "id": 0,
+            "meta": {}
+        },
+        "../node_modules/vue-router/dist/vue-router.esm.js": {
+            "id": 1,
+            "meta": {
+                "harmonyModule": true
+            },
+            "exports": [
+                "default"
+            ]
+        },
+        "../node_modules/vue/dist/vue.esm.js": {
+            "id": 2,
+            "meta": {
+                "harmonyModule": true
+            },
+            "exports": [
+                "default"
+            ]
+        },
+        "../node_modules/webpack/buildin/global.js": {
+            "id": 3,
+            "meta": {}
+        }
+    }
+}
